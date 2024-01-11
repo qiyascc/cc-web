@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "portfolio-project"
+version = "0.1.0"
+description = "Portfolio for Qiyas.CC"
+authors = ["Qiyas <main@qiyas.cc>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+Django = "5.0"
+reactpy = "^1.0.2"
+reactpy-django = "^3.5.1"
+uvicorn = {extras = ["standard"], version = "^0.25.0"}
+whitenoise = "^6.6.0"
+djangorestframework = "^3.14.0"
+httpx = "^0.26.0"
