@@ -1,10 +1,11 @@
 from reactpy import component, html, run
 import requests
-
+import aiohttp
+import asyncio
 ##########################################################################
-x = {
+userData = {
     "name": "Qiyas Sadıqov",
-    "profession": "Developer",
+    "profession": "Software Engineer",
     "shortBio": "I can code anything you can think of. 🧑‍💻",
     "socialLinks": {
         "github": "https://github.com/qiyascc",
@@ -12,28 +13,46 @@ x = {
         "linkedin": "https://linkedin.com/in/qiyascc",
         "telegram": "https://t.me/qiyascc"
     },
-    "aboutText": "Detailed about section text. <strong>Important part</strong> of the text.",
+    "aboutText": "Detailed about section text. Important part of the text.",
     "experience": [
         {
-            "dateRange": "date - date",
-            "title": "Experience Title",
-            "description": "Experience detail.",
-            "technologies": ['Node.Js', 'SQL', 'Express', 'Flutter']
+            "dateRange": "May 2023 - June 2023",
+            "title": "CEO & Software Engineer",
+            "description": "LaFood.",
+            "technologies": ['Node.Js', 'MongoDB', 'Express', 'Dart']
         },
         {
-            "dateRange": "date - date",
-            "title": "Experience Title",
-            "description": "Experience detail.",
-            "technologies": ['React', 'JavaScript', 'TypeScript']
-        }
+            "dateRange": "Mart 2021 - Present",
+            "title": "Freelance",
+            "description": "Fullstack software engineer",
+            "technologies": ['Node.js', 'SQL', 'PostCSS', 'C++', 'React Native', 'jQuery', 'Telethon', 'React.js', 'JavaScript', 'CSS', 'HTML5']
+        },
+        {
+            "dateRange": "MDec 2023 - Present",
+            "title": "CEO & Technical Lead",
+            "description": "Chaplean.",
+            "technologies": ['Sales Management', 'Project Management', 'Software Project Management', 'CEO']
+        },
     ],
     "projects": [
         {
-            "title": "Project Title",
-            "description": "Project Description",
-            "imageUrl": "https://via.placeholder.com/160x90",
-            "technologies": ['HTML', 'CSS', 'JavaScript']
-        }
+            "title": "TexnoPark.com (V1, V2, V3)",
+            "description": "The purpose of this site is to promote the technopark within the Western Caspian University and to provide certain services to the university students.",
+            "imageUrl": "https://texnopark.com/static/images/topImages/navbarAndFooter/logo.png",
+            "technologies": ['Nginx', 'gunicorn', 'JSON', 'Django', 'Bootstrap', 'SQLite', 'Express.js', 'Python', 'jQuery', 'JavaScript', 'CSS', 'HTML5']
+        },
+        {
+            "title": "Service Manager",
+            "description": "You can monitor and manage your services with this telegram bot. Simple and functional.",
+            "imageUrl": "https://texnopark.com/static/images/topImages/navbarAndFooter/logo.png",
+            "technologies": ['telegraf', 'Node.js', 'JavaScript']
+        },
+        {
+            "title": "Bestfixappliances.COM",
+            "description": "It is a basic website for the repair company serving globally. It works as an alternative. The website belongs to me as a fullstack. I used html, css (tailwindcss), additional js libraries and django in the project.",
+            "imageUrl": "https://texnopark.com/static/images/topImages/navbarAndFooter/logo.png",
+            "technologies": ['HTML', 'tailwindCSS', 'JavaScript', 'Django']
+        },
     ],
     "writings": [
         {
@@ -44,21 +63,6 @@ x = {
         }
     ]
 }
-
-try:
-    response = requests.get('http://127.0.0.1:8000/api/userdata/')
-    response.raise_for_status()
-    userData = response.json()
-except Exception as e:
-    print(e)
-    userData = x
-##########################################################################
-##########################################################################
-##########################################################################
-##########################################################################
-##########################################################################
-##########################################################################
-
 
 @component
 def UserProfile():
@@ -128,3 +132,9 @@ def UserProfile():
                 writing_section
             )
     )
+
+# async def main():
+#     user_data = await get_user_data()
+#     run(lambda: UserProfile(user_data))
+
+# asyncio.run(main())

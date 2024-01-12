@@ -1,21 +1,48 @@
 {% load reactpy %}
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Kişisel web sayfanızın kısa açıklaması.">
-    <meta name="keywords" content="HTML, CSS, Tailwind, Personal Website">
-    <meta name="author" content="Adınız">
-    <title>Qiyas WEB</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  </head>
-  
-  <body class="gradient-bg text-lavander">
-    {% component "portfolioApp.components.UserProfile" %}
-  </body>
 
-  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Kişisel web sayfanızın kısa açıklaması.">
+  <meta name="keywords" content="HTML, CSS, Tailwind, Personal Website">
+  <meta name="author" content="Adınız">
+  <title>Qiyas WEB</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+  <style>
+    .gradient-bg {
+      background: hsla(223, 60%, 16%, 1);
+      background: linear-gradient(135deg, hsla(223, 60%, 16%, 1) 0%, hsla(222, 47%, 11%, 1) 99%);
+      background: -moz-linear-gradient(135deg, hsla(223, 60%, 16%, 1) 0%, hsla(222, 47%, 11%, 1) 99%);
+      background: -webkit-linear-gradient(135deg, hsla(223, 60%, 16%, 1) 0%, hsla(222, 47%, 11%, 1) 99%);
+    }
+
+    .text-whiteish-gray {
+      color: #6F80A0;
+    }
+
+    .text-lavander {
+      color: #C9D4ED;
+    }
+
+    strong {
+      color: #C9D4ED;
+    }
+
+    .technology-item {
+      background-color: #112B38;
+      color: #49A69F;
+    }
+  </style>
+</head>
+
+<body class="gradient-bg text-lavander">
+  {% component "portfolioApp.components.UserProfile" %}
+</body>
+
+
 </html>
