@@ -14,6 +14,6 @@ def user_data_view(request):
     data = {}
     return JsonResponse(data)
 
-class UserProfileViewSet(viewsets.ReadOnlyModelViewSet):
+class UserProfileViewSet(viewsets.ModelViewSet):
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
